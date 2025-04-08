@@ -103,17 +103,11 @@ void lcd_print(char *buff, int len)
 
 void lcd_put_char(char in_char, int position)
 {
-    if (in_char == ' ')
-    {
-        // Display space
-        LCDMEM[position] = 0;
-        LCDMEM[position+1] = 0;
-    }
-    else if (in_char >= '0' && in_char <= '9')
+    if (in_char >= '0' && in_char <= '9')
     {
         // Display digit
-        LCDMEM[position] = digit[c-48][0];
-        LCDMEM[position+1] = digit[c-48][1];
+        LCDMEM[position] = digit[in_char-48][0];
+        LCDMEM[position+1] = digit[in_char-48][1];
     }
     else if (in_char >= 'A' && in_char <= 'Z')
     {
@@ -123,9 +117,9 @@ void lcd_put_char(char in_char, int position)
     }
     else
     {
-        // Turn all segments on if character is not a space, digit, or uppercase letter
-        LCDMEM[position] = 0xFF;
-        LCDMEM[position+1] = 0xFF;
+        // Display space
+        LCDMEM[position] = 0;
+        LCDMEM[position+1] = 0;
     }
 }
 
