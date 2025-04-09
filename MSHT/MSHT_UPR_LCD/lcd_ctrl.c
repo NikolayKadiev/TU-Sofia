@@ -9,7 +9,7 @@ const int segment_poss[6] =
         18,     // Сегмент A4 започва от S36 
         14,     // Сегмент A5 започва от S28 
         7      // Сегмент A6 започва от S14
-} 
+}; 
 
 // Стойности на седментите за изобразяване на цифри
 const char digit[10][2] =
@@ -133,18 +133,18 @@ void lcd_put_char(char in_char, int position)
 
 void lcd_clear(void)
 {
-    LCDMEM[pos1] = LCDBMEM[pos1] = 0;
-    LCDMEM[pos1+1] = LCDBMEM[pos1+1] = 0;
-    LCDMEM[pos2] = LCDBMEM[pos2] = 0;
-    LCDMEM[pos2+1] = LCDBMEM[pos2+1] = 0;
-    LCDMEM[pos3] = LCDBMEM[pos3] = 0;
-    LCDMEM[pos3+1] = LCDBMEM[pos3+1] = 0;
-    LCDMEM[pos4] = LCDBMEM[pos4] = 0;
-    LCDMEM[pos4+1] = LCDBMEM[pos4+1] = 0;
-    LCDMEM[pos5] = LCDBMEM[pos5] = 0;
-    LCDMEM[pos5+1] = LCDBMEM[pos5+1] = 0;
-    LCDMEM[pos6] = LCDBMEM[pos6] = 0;
-    LCDMEM[pos6+1] = LCDBMEM[pos6+1] = 0;
+    LCDMEM[segment_poss[0]] = LCDBMEM[segment_poss[0]] = 0;
+    LCDMEM[segment_poss[0]+1] = LCDBMEM[segment_poss[0]+1] = 0;
+    LCDMEM[segment_poss[1]] = LCDBMEM[segment_poss[1]] = 0;
+    LCDMEM[segment_poss[1]+1] = LCDBMEM[segment_poss[1]+1] = 0;
+    LCDMEM[segment_poss[2]] = LCDBMEM[segment_poss[2]] = 0;
+    LCDMEM[segment_poss[2]+1] = LCDBMEM[segment_poss[2]+1] = 0;
+    LCDMEM[segment_poss[3]] = LCDBMEM[segment_poss[3]] = 0;
+    LCDMEM[segment_poss[3]+1] = LCDBMEM[segment_poss[3]+1] = 0;
+    LCDMEM[segment_poss[4]] = LCDBMEM[segment_poss[4]] = 0;
+    LCDMEM[segment_poss[4]+1] = LCDBMEM[segment_poss[4]+1] = 0;
+    LCDMEM[segment_poss[5]] = LCDBMEM[segment_poss[5]] = 0;
+    LCDMEM[segment_poss[5]+1] = LCDBMEM[segment_poss[5]+1] = 0;
 
     LCDM14 = LCDBM14 = 0x00;
     LCDM18 = LCDBM18 = 0x00;
