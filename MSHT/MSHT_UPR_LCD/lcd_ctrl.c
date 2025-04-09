@@ -96,7 +96,12 @@ void lcd_print(char *buff, int len)
             break;
         }
         else{
-            lcd_put_char(buff[i], segment_poss[i]);
+            if(buff[i] == '.'){
+                lcd_put_char(buff[i], segment_poss[i-1]);
+            }
+            else{
+                lcd_put_char(buff[i], segment_poss[i]);
+            }
         }
     }
 }
@@ -114,6 +119,9 @@ void lcd_put_char(char in_char, int position)
         // Display alphabet
         LCDMEM[position] = alphabetBig[in_char-65][0];
         LCDMEM[position+1] = alphabetBig[in_char-65][1];
+    }
+    else if (in_char == '.'){
+        LCDMEM[position+1] |= 0x01;
     }
     else
     {
