@@ -38,25 +38,25 @@ int main(void)
 
     LCDCCTL0 |= LCDON;              // Включи дисплея
 
-    LCDMEM[9] = 0x80;
-    LCDMEM[9+1] = 0x50;
-
-    LCDMEM[5] = 0x9F;
-    LCDMEM[5+1] = 0x00;
-
-    LCDMEM[3] = 0xB7;
-    LCDMEM[3+1] = 0x00;
-
-    LCDMEM[18] = 0x80;
-    LCDMEM[18+1] = 0x50;
-
-    LCDMEM[14] = 0x90;
-    LCDMEM[14+1] = 0x50;
-
-    LCDMEM[7] = 0x6C;
-    LCDMEM[7+1] = 0x82;
-
     while(1){
+        LCDMEM[9] = 0x80;
+        LCDMEM[9+1] = 0x50;
+
+        LCDMEM[5] = 0x9F;
+        LCDMEM[5+1] = 0x00;
+
+        LCDMEM[3] = 0xB7;
+        LCDMEM[3+1] = 0x00;
+
+        LCDMEM[18] = 0x80;
+        LCDMEM[18+1] = 0x50;
+
+        LCDMEM[14] = 0x90;
+        LCDMEM[14+1] = 0x50;
+
+        LCDMEM[7] = 0x6C;
+        LCDMEM[7+1] = 0x82;
+
         __no_operation();
         __delay_cycles(1000);
     }
