@@ -1,7 +1,5 @@
 
 #include "msp430.h"
-#include "lcd_ctrl.h"
-
 
 int main(void)
 {
